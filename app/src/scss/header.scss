@@ -1,0 +1,19 @@
+@import "variables";
+
+.header {
+  width: 100%;
+
+  &__tell {
+    display: inline-block;
+    color: $accent-color;
+    background-color: $base-color;
+    border-radius: 0 0 20px 20px;
+    position: fixed;
+    padding: 3px;
+    font-family: $font-family;
+    top: 0;
+    left: 300px;
+    border:3px solid $accent-color;
+  }
+
+}

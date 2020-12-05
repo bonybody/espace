@@ -1,5 +1,5 @@
 const src = __dirname + "/src";
-const dist = __dirname + "/dist";
+const dist = __dirname + "/docs";
 const MODE = 'development';
 const enabledSourceMap = MODE === 'development'
 const HtmlWebpackPlugin = require('html-webpack-plugin');

@@ -4,7 +4,8 @@
   "description": "web site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack",
+    "build": "webpack --mode production"
   },
   "author": "bonybody",
   "license": "ISC",
@@ -19,5 +20,8 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.10.0",
     "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^3.11.0"
   }
 }

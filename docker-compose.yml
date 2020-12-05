@@ -3,7 +3,7 @@ services:
   node:
     image: node:14.1.0-alpine
     ports:
-      - "8000:80"
+      - "8000:8000"
     volumes:
       - ./app:/src
     working_dir: /src

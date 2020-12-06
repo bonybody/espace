@@ -1,0 +1,20 @@
+@import "variables";
+.global-nav {
+  padding: 0 10px;
+  display: inline-block;
+  box-sizing: content-box;
+  color: $main-color;
+  background: $base-color;
+  border-radius: 0 0 20px 20px;
+  border:3px solid $main-color;
+  &__link {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  &__separator {
+    display: inline-block;
+    padding: 0.4rem 1px;
+    background-color: $main-color;
+    opacity: 0.6;
+  }
+}

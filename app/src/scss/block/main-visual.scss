@@ -1,0 +1,60 @@
+.main-visual {
+  background-image: url("../../img/main-visual.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  &__sub-visual {
+    width: 100%;
+    position: absolute;
+    bottom: calc((100vw / -8) + 1px);
+    display: inline-block;
+  }
+
+  &__scroll-down {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 1px;
+      height: 50px;
+      background: #fff;
+      animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 1px;
+      height: 50px;
+      background: rgba(255, 255, 255, .4);
+    }
+  }
+}
+
+@keyframes sdl {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  50% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  50.1% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}

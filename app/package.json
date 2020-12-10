@@ -22,6 +22,7 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
+    "html-critical-webpack-plugin": "^2.1.0",
     "webpack-dev-server": "^3.11.0"
   }
 }

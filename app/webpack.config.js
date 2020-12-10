@@ -4,6 +4,7 @@ const MODE = 'development';
 const enabledSourceMap = MODE === 'development'
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
@@ -28,7 +29,9 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
             options: {
@@ -39,6 +42,10 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              sassOptions: {
+                includePaths: [src + '/scss'],
+              },
+              additionalData: "@import 'entrypoint.scss';",
               sourceMap: enabledSourceMap
             }
           }
@@ -56,9 +63,15 @@ module.exports = {
       },
     ]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html"
+    }),
+    // CSSファイルを外だしにするプラグイン
+    new MiniCssExtractPlugin({
+      // ファイル名を設定します
+      filename: "style.css",
     }),
   ],
   target: ['web', 'es5']

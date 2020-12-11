@@ -1,0 +1,22 @@
+.recruit {
+  max-width: 1000px;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  align-items: center;
+  &__detail {
+    text-align: center;
+    line-height: 1.7;
+  }
+  &__text {
+    margin-bottom: 50px;
+  }
+  &__tell {
+    display: inline-block;
+    color: $base-color;
+    background-color: $main-color;
+    padding: 10px 30px;
+    border-radius: 100px;
+  }
+}

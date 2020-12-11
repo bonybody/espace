@@ -1,0 +1,17 @@
+.shop {
+  padding: 100px 0;
+  color: $font-base-color;
+  line-height: 1.8;
+  &__catch-copy {
+    text-align: center;
+  }
+  &__name {
+    font-size: 2em;
+  }
+  &__detail {
+    margin: 0 auto;
+    width: 90vw;
+    max-width: 400px;
+    text-align: left;
+  }
+}

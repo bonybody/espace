@@ -1,8 +1,0 @@
-@mixin section-header($isBlack) {
-  @if ($isBlack) {
-    border: 3px ;
-  }
-  @else {
-    font-size: 16px;
-  }
-}

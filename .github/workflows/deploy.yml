@@ -22,7 +22,7 @@ jobs:
 
       # Runs the Super-Linter action
       - name: Deploy App
-        run:
+        run: |
           git config --global user.email "yumaaa312@gmail.com"
           git config --global user.name "bonybody"
           cd ./app/dist

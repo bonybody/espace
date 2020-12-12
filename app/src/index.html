@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>espace</title>
+  <meta name="description" content="北区の美容室イスパスは ヘアサロン、ネイル、メイク、ヘッドスパでお客様をトータルプロデュース。">
+  <link rel="shortcut icon" href="./img/favicon.gif">
+  <link rel="icon" type="image/gif" href="./img/favicon.gif">
 </head>
 <body>
 <div id="first-view" class="first-view">
@@ -15,16 +18,20 @@
     <nav class="global-nav">
       <a class="global-nav__link" href="#concept">CONCEPT</a>
       <span class="global-nav__separator"></span>
+      <a class="global-nav__link" href="#staff">STAFF</a>
+      <span class="global-nav__separator"></span>
       <a class="global-nav__link" href="#menu">MENU</a>
       <span class="global-nav__separator"></span>
       <a class="global-nav__link" href="#shop">SHOP</a>
       <span class="global-nav__separator"></span>
       <a class="global-nav__link" href="#recruit">RECRUIT</a>
       <span class="global-nav__separator"></span>
-      <a class="global-nav__link" href="#item">ITEM</a>
+      <a class="global-nav__link" href="#blog">BLOG</a>
     </nav>
     <p class="header__tell">
-      TEL 0663470111
+      <a href="tel:0663470111">
+        TEL 0663470111
+      </a>
     </p>
   </header>
   <main>
@@ -46,7 +53,7 @@
         それぞれのプロフェッショナルが、お客様をトータルにプロデュースさせていただきます。
       </p>
     </div>
-    <div class="section section--staff">
+    <div class="section section--staff" id="staff">
       <p class="section__header section__header--black">STAFF</p>
       <div class="staff staff--manager">
         <img class="staff__img" src="./img/staff/staff05.jpg" alt="大山聡">
@@ -102,7 +109,7 @@
         </p>
       </div>
     </div>
-    <div class="section">
+    <div class="section" id="shop">
       <p class="section__header section__header--black">SHOP</p>
       <!-- Swiper -->
       <div class="swiper-container">
@@ -110,22 +117,23 @@
           <div class="swiper-slide">
             <img src="./img/slider/salon01.jpg" alt="サロン写真">
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <img src="./img/slider/salon02.jpg" alt="サロン写真">
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <img src="./img/slider/salon03.jpg" alt="サロン写真">
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <img src="./img/slider/salon04.jpg" alt="サロン写真">
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <img src="./img/slider/salon05.jpg" alt="サロン写真">
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-swiper-autoplay="2000">
             <img src="./img/slider/salon06.jpg" alt="サロン写真">
           </div>
         </div>
+        <div class="swiper-scrollbar"></div>
       </div>
       <p class="shop__catch-copy">北区の美容室イスパスは ヘアサロン、ネイル、メイク、ヘッドスパでお客様をトータルプロデュース。</p>
       <div class="shop__detail">
@@ -135,7 +143,7 @@
         <p class="shop__tell">06-6347-0111</p>
       </div>
     </div>
-    <div class="section section--recruit">
+    <div class="section section--recruit" id="recruit">
       <p class="section__header section__header--black">RECRUIT</p>
       <div class="recruit">
         <img class="recruit__non-grid-images" src="./img/non-grid-images.png" alt="non-grid-images">
@@ -144,60 +152,68 @@
             espaceでは仲間を募集しています。<br>
             私達と一緒にお客様の笑顔をつくりませんか？
           </p>
-          <p class="recruit__tell">TELL:06-6347-0111</p>
+          <p class="recruit__tell">
+            <a href="tel:0663470111">
+              TEL 0663470111
+            </a>
+          </p>
         </div>
       </div>
     </div>
-    <div class="blog" id="blog">
-      <p class="blog__header">STAFF BLOG</p>
-      <div class="articles">
-        <div class="article">
-          <img class="article__image" src="#" alt="成人式">
-          <p class="article__name">
+    <div class="section" id="blog">
+      <p class="section__header section__header--black">STAFF BLOG</p>
+      <div class="blog">
+        <div class="blog__content">
+          <img class="blog__image" src="./img/blog/blog01.jpg" alt="成人式">
+          <p class="blog__name">
             【成人式】一度きりの思い出を当店でおしゃれに彩りませんか？
           </p>
           <hr>
-          <p class="article__other">
-            <span class="article__date">2020/11/27</span>
-            <span class="article__contributor">大山聡</span>
+          <p class="blog__others">
+            <span class="blog__date">2020/11/27</span>
+            <span class="blog__contributor">大山聡</span>
           </p>
         </div>
-        <div class="article">
-          <img class="article__image" src="#" alt="スタイリング道具">
-          <p class="article__name">
+        <div class="blog__content">
+          <img class="blog__image" src="./img/blog/blog02.jpg" alt="スタイリング道具">
+          <p class="blog__name">
             当店お墨付きのスタイリング道具を紹介します
           </p>
           <hr>
-          <p class="article__other">
-            <span class="article__date">2020/10/02</span>
-            <span class="article__contributor">大山聡</span>
+          <p class="blog__others">
+            <span class="blog__date">2020/10/02</span>
+            <span class="blog__contributor">大山聡</span>
           </p>
         </div>
-        <div class="articles">
-          <img class="article__image" src="#" alt="スタイリング石鹸">
-          <p class="article__name">
+        <div class="blog__content">
+          <img class="blog__image" src="./img/blog/blog03.jpg" alt="スタイリング石鹸">
+          <p class="blog__name">
             【ハンドメイド石鹸】店長おすすめのハンドメイド石鹸を紹介
           </p>
           <hr>
-          <p class="article__other">
-            <span class="article__date">2020/09/12</span>
-            <span class="article__contributor">大山聡</span>
+          <p class="blog__others">
+            <span class="blog__date">2020/09/12</span>
+            <span class="blog__contributor">大山聡</span>
           </p>
         </div>
-        <div class="article">
-          <img class="article__image" src="#" alt="キャンドル">
-          <p class="article__name">
+        <div class="blog__content">
+          <img class="blog__image" src="./img/blog/blog04.jpg" alt="キャンドル">
+          <p class="blog__name">
             可愛い見た目と優しい香りのキャンドルでゆったりリラックス
           </p>
           <hr>
-          <p class="article__other">
-            <span class="article__date">2020/09/02</span>
-            <span class="article__contributor">原口彩乃</span>
+          <p class="blog__others">
+            <span class="blog__date">2020/09/02</span>
+            <span class="blog__contributor">原口彩乃</span>
           </p>
         </div>
       </div>
     </div>
   </main>
+  <footer class="footer">
+    <p class="footer__logo-wrap"><img class="footer__logo" src="./img/logo.png" alt="ロゴ"></p>
+    <p class="footer__copy">&copy; 2020 espace INC.</p>
+  </footer>
 </div>
 </body>
 </html>

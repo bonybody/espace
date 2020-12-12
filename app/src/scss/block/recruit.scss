@@ -2,9 +2,13 @@
   max-width: 1000px;
   display: flex;
   margin: auto;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  &__non-grid-images {
+    width: 80vw;
+    max-width: 600px;
+  }
   &__detail {
     text-align: center;
     line-height: 1.7;
@@ -18,5 +22,10 @@
     background-color: $main-color;
     padding: 10px 30px;
     border-radius: 100px;
+    transition: 0.1s all;
+    &:hover {
+      color: $font-base-color;
+      background-color: $base-color;
+    }
   }
 }

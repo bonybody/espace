@@ -3,8 +3,12 @@ import 'swiper/swiper-bundle.css'
 
 const mySwiper = new Swiper('.swiper-container', {
   autoplay: {
-    delay: 3000,
+    delay: 0,
     disableOnInteraction: false
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',  //スクロールバーの要素のセレクタ
+    draggable: true,  //スクロールバーをドラッグ可能にする
   },
 
   loop: true,  //ループ可能（ループモードを有効に）

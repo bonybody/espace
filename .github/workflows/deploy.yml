@@ -1,25 +1,35 @@
 name: deploy
 
 # Run this workflow every time a new commit pushed to your repository
-on: push
+on:
+  push:
+    branchs:
+      - main
 
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  super-lint:
+  deploy:
     # Name the Job
     name: Lint code base
     # Set the type of machine to run on
     runs-on: ubuntu-latest
+    env: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
 
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: public
 
       # Runs the Super-Linter action
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy App
+        uses: actions/github-script@0.4.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            git config --global user.email "yumaaa312@gmail.com"
+            git config --global user.name "bonybody"
+            cd ./app/dist
+            git add .
+            git commit -m "deploy"
+            git push origin public

@@ -1,0 +1,30 @@
+.blog {
+  line-height: 1.8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+  &__content {
+    width: 256px;
+    margin-bottom: 50px;
+  }
+  &__image {
+    width: 256px;
+    height: 144px;
+    object-fit: cover;
+  }
+  &__others {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    text-align: left;
+  }
+  &__date {
+    text-align: left;
+  }
+  &__contributor {
+    text-align: right;
+  }
+}

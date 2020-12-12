@@ -1,6 +1,7 @@
 const src = __dirname + "/src";
-const dist = __dirname + "/docs";
-const MODE = 'development';
+const dist = __dirname + "/dist";
+const MODE = process.env.NODE_ENV;
+console.log(MODE);
 const enabledSourceMap = MODE === 'development'
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -9,7 +10,7 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: MODE,
-  watch: true,
+  watch: MODE === 'development' ,
   watchOptions: {
     poll: true,
     ignored: /node_modules/
@@ -23,9 +24,24 @@ module.exports = {
     path: dist,
     // 出力ファイル名
     filename: "main.js",
+    assetModuleFilename: "img/[name][ext]",
+    publicPath: ''
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env"
+              ]
+            }
+          }
+        ]
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -59,7 +75,7 @@ module.exports = {
         // 対象となるファイルの拡張子
         test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
         // 画像をBase64として取り込む
-        type: "asset/inline",
+        type: "asset/resource",
       },
     ]
   },

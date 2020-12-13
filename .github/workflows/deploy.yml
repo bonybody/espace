@@ -25,8 +25,7 @@ jobs:
         run: |
           git config --global user.email "yumaaa312@gmail.com"
           git config --global user.name "bonybody"
-          git remote rm origin
-          git remote add origin https://bonybody:${{ secrets.GITHUB_PASS }}@github.com/bonybody/espace-public.git
+          git remote set-url origin https://bonybody:${{ secrets.MY_GITHUB_PASS }}@github.com/bonybody/espace-public.git
           docker-compose run node npm install
           docker-compose run --rm node npm run build
           cp -r ./app/dist/ ./docs

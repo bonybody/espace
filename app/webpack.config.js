@@ -25,7 +25,7 @@ module.exports = {
     // 出力ファイル名
     filename: "main.js",
     assetModuleFilename: "img/[name][ext]",
-    publicPath: ''
+    publicPath: './'
   },
   module: {
     rules: [

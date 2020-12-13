@@ -22,13 +22,12 @@ jobs:
 
       # Runs the Super-Linter action
       - name: Deploy App
-        uses: actions/github-script@0.4.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            git config --global user.email "yumaaa312@gmail.com"
-            git config --global user.name "bonybody"
-            cd ./app/dist
-            git add .
-            git commit -m "deploy"
-            git push origin public
+        run: |
+          git config --global user.email "yumaaa312@gmail.com"
+          git config --global user.name "bonybody"
+          docker-compose run node npm install
+          docker-compose run --rm node npm run build
+          cp -r ./app/dist/ ./docs
+          git add .
+          git commit -m "deploy"
+          git push origin public

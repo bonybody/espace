@@ -25,6 +25,7 @@ jobs:
         run: |
           git config --global user.email "yumaaa312@gmail.com"
           git config --global user.name "bonybody"
+          docker-compose run node npm install
           docker-compose run --rm node npm run build
           cp -r ./app/dist/ ./docs
           git add .

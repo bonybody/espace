@@ -21,10 +21,12 @@ jobs:
           echo "actions workflow now..."
           git config --global user.email "yumaaa312@gmail.com"
           git config --global user.name "bonybody"
-          git remote set-url origin https://bonybody:4012imai@github.com/bonybody/espace-public.git
+          git remote set-url origin https://${{ GIT_USER }}@github.com/bonybody/espace-public.git
           docker-compose run node npm install
           docker-compose run --rm node npm run build
           cp -r ./app/dist/ ./docs
           git add .
           git commit -m "deploy"
           git push origin main
+        env:
+          GIT_USER: ${{ github.actor }}:${{ github.token }}

@@ -17,16 +17,17 @@ jobs:
       # Checks out a copy of your repository on the ubuntu-latest machine
       - uses: actions/checkout@v2
       - name: Checkout code
-        run: |
-          echo "actions workflow now..."
-          git config --global user.email "yumaaa312@gmail.com"
-          git config --global user.name "bonybody"
-          git remote set-url origin https://${{ GIT_USER }}@github.com/bonybody/espace-public.git
+
+      - name: Build Site
+        run:
           docker-compose run node npm install
           docker-compose run --rm node npm run build
-          cp -r ./app/dist/ ./docs
-          git add .
-          git commit -m "deploy"
-          git push origin main
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
         env:
-          GIT_USER: ${{ github.actor }}:${{ github.token }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_KEY: ${{ secrets.NETLIFY_DEPLOY_KEY }}
+        with: 
+          args: deploy --dir=./app/dist --prod
+          secrets: '["NETLIFY_DEPLOY_KEY", "NETLIFY_SITE_ID"]'

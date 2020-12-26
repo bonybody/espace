@@ -1,0 +1,16 @@
+version: '3'
+services:
+  node:
+    build:
+      context: .
+
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/src
+      - node-modules:/src/node_modules
+    working_dir: /src
+    tty: true
+
+volumes:
+  node-modules:

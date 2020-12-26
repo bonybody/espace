@@ -1,0 +1,36 @@
+.staff {
+  display: inline-block;
+  margin: 30px;
+  line-height: 1.7;
+  &--manager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  &__detail-wrap {
+    margin: 0 50px;
+    max-width: 400px;
+    &--manager {
+      text-align: left;
+    }
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  &__position {
+    color: $main-color;
+    &--manager {
+      display: inline;
+    }
+  }
+  &__name {
+    &--manager {
+      text-align: left;
+      display: inline;
+    }
+  }
+}

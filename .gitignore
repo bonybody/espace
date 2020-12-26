@@ -1,0 +1,6 @@
+.idea
+app/dist
+app/package-lock.json
+app/yarn-error.log
+app/yarn.lock
+app/node_modules

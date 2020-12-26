@@ -1,0 +1,13 @@
+.concept {
+  margin: 120px auto 50px auto;
+  text-align: center;
+  max-width: 960px;
+  &__header {
+    font-size: 24px;
+    margin: 30px 0;
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 2;
+  }
+}

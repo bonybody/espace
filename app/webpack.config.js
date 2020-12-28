@@ -78,14 +78,20 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        // 対象となるファイルの拡張子
-        test: /\.(gif|png|jpg|eot|wof|woff|ttf|svg)$/,
-        // 画像をBase64として取り込む
-        type: "asset/resource",
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              disable: true,
+              quality: 50
+            },
+          },
+        ]
       },
-    ]
+    ],
   },
-
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html"

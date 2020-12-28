@@ -1,4 +1,4 @@
-FROM node:14.1.0-alpine
+FROM node:14.15.3-alpine
 
 RUN apk add chromium \
             chromium-chromedriver \

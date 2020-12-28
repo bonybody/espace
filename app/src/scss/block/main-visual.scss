@@ -13,18 +13,17 @@
   }
 
   &__scroll-down {
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      margin: auto;
-      width: 1px;
-      height: 50px;
-      background: #fff;
-      animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
-    }
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 1px;
+    height: 50px;
+    background: #fff;
+    animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+
 
     &::before {
       content: '';
@@ -38,6 +37,7 @@
       background: rgba(255, 255, 255, .4);
     }
   }
+
 }
 
 @keyframes sdl {

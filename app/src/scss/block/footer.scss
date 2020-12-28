@@ -1,5 +1,5 @@
 .footer {
-  background-color: $main-color;
+  background-color: #000;
   padding: 30px 0;
   text-align: center;
   &__logo-wrap {
@@ -15,6 +15,6 @@
   }
   &__copy {
     text-align: center;
-    color: $base-color;
+    color: $main-color;
   }
 }

@@ -6,14 +6,20 @@ const enabledSourceMap = MODE === 'development'
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: MODE,
-  watch: MODE === 'development' ,
+  watch: MODE === 'development',
   watchOptions: {
     poll: true,
     ignored: /node_modules/
+  },
+  devServer: {
+    contentBase: "dist",
+    host: '0.0.0.0',
+    port: '80'
   },
 
   // メインとなるJavaScriptファイル（エントリーポイント）

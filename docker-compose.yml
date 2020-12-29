@@ -10,6 +10,6 @@ services:
       - node-modules:/src/node_modules
     working_dir: /src
     tty: true
-
+    command: npm run dev
 volumes:
   node-modules:

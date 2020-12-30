@@ -1,4 +1,1 @@
-FROM node:14.15.3-alpine
-
-RUN apk add chromium \
-            chromium-chromedriver \
+FROM node:14.15.3-buster
